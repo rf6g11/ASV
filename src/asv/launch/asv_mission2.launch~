@@ -1,0 +1,40 @@
+<launch>
+<!--##############################################################################  	-->
+<!--#asv_mission.launch									-->
+<!--#											-->
+<!--#Initial code is a simplified subset of delphin_mission.launch from DelphinROSv2	-->
+<!--#Code by Dr Alexander Brian Phillips, Leo Steenson and Catherine Harris		-->
+<!--#Code updated by Enrico Anderlini (ea3g09@soton.ac.uk)				-->
+<!--#											-->
+<!--#Modifications to code								-->
+<!--# 21/11/2012	Modified code for asv	ABP					-->
+<!--# 07/02/2013        Updated and corrected for actual use				-->
+<!--# 27/02/2013	Modified for use in lakes rather than QinetiQ			-->
+<!--#											-->
+<!--#############################################################################	-->
+<!--#Notes										-->
+<!--#											-->
+<!--##############################################################################	-->
+
+
+    <param name="over-pitch"          value="45" />                   <!-- Maximum pitch (deg) - causes abort -->
+    <param name="over-roll"           value="45" />                   <!-- Maximum roll (deg) - causes abort -->
+    <param name="max-internal-temp"   value="50" />                   <!-- Maximum internal pressure vessel temp (deg) - causes abort -->
+    <param name="min-battery-voltage" value="8" />                   <!-- Minimum Motor voltage (mV) - causes abort -->
+    <param name="mission-timeout"     value="240" />                   <!-- Mission timeout (minutes) -->
+    <!-- Change the following values with those corresponding to the lake -->
+    <param name="lat_orig"            value="51.0149116667" />    <!-- Origin Latitude -->
+    <param name="long_orig"           value="-1.49480166667" />   <!-- Origin Longitude -->
+  
+    <!-- Add hardware nodes under here! -->
+    <node name="arduino" pkg="asv" type="arduino.py" /> 
+    <node name="OceanServer_compass" pkg="asv" type="compass.py" />
+    <node name="gps" pkg="asv" type="gps.py" />
+
+
+    <!-- Add monitoring nodes under here! -->  
+    <node name="back_seat_driver" pkg="asv" type="BackSeatDriver.py" output="screen" required="true" />  
+    <!-- <node name="Logger" pkg="asv" type="logger.py" /> -->
+
+
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/ric_94/catkin_ws/devel
+
+Name: asv
+Description: Description of asv
+Version: 0.0.0
+Cflags: -I/home/ric_94/catkin_ws/devel/include
+Libs: -L/home/ric_94/catkin_ws/devel/lib 
+Requires: roscpp rospy std_msg

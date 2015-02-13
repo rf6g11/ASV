@@ -1,0 +1,23 @@
+
+(cl:in-package :asdf)
+
+(defsystem "asv-msg"
+  :depends-on (:roslisp-msg-protocol :roslisp-utils )
+  :components ((:file "_package")
+    (:file "arduino" :depends-on ("_package_arduino"))
+    (:file "_package_arduino" :depends-on ("_package"))
+    (:file "status" :depends-on ("_package_status"))
+    (:file "_package_status" :depends-on ("_package"))
+    (:file "propd" :depends-on ("_package_propd"))
+    (:file "_package_propd" :depends-on ("_package"))
+    (:file "compass" :depends-on ("_package_compass"))
+    (:file "_package_compass" :depends-on ("_package"))
+    (:file "position" :depends-on ("_package_position"))
+    (:file "_package_position" :depends-on ("_package"))
+    (:file "rudderd" :depends-on ("_package_rudderd"))
+    (:file "_package_rudderd" :depends-on ("_package"))
+    (:file "gps" :depends-on ("_package_gps"))
+    (:file "_package_gps" :depends-on ("_package"))
+    (:file "headingd" :depends-on ("_package_headingd"))
+    (:file "_package_headingd" :depends-on ("_package"))
+  ))

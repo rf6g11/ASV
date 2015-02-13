@@ -1,0 +1,2 @@
+dict 	AIS_message
+
