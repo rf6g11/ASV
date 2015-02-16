@@ -49,6 +49,7 @@ find_package(catkin REQUIRED COMPONENTS
    FILES
 #   Message1.msg
 #   Message2.msg
+ais_data.msg
 arduino.msg
 compass.msg
 gps.msg

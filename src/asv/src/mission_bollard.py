@@ -109,13 +109,13 @@ def main():
 #            transitions={'succeeded':'STOP', 'aborted':'STOP','preempted':'STOP'})     
 
         smach.StateMachine.add('WAYPOINT1', GoToXY(lib, 50, 100, 2, 120),  #(lib, WpXnew, WpYnew, XYtolerance (m), timeout (s))
-            transitions={'succeeded':'WAYPOINT2', 'aborted':'STOP','preempted':'GOHOME})     
+            transitions={'succeeded':'WAYPOINT2', 'aborted':'STOP','preempted':'GOHOME'})     
 	
         smach.StateMachine.add('WAYPOINT2', GoToXY(lib, 50, 50, 50, 120),  #(lib, WpXnew, WpYnew, XYtolerance (m), timeout (s))
-            transitions={'succeeded':'GOHOME', 'aborted':'STOP','preempted':'GOHOME}) 
+            transitions={'succeeded':'GOHOME', 'aborted':'STOP','preempted':'GOHOME'}) 
 
 	smach.StateMachine.add('GOHOME', GoToXY(lib, 0, 0, 2, 120),  #(lib, WpXnew, WpYnew, XYtolerance (m), timeout (s))
-            transitions={'succeeded':'WAYPOINT2', 'aborted':'STOP','preempted':'GOHOME})  
+            transitions={'succeeded':'WAYPOINT2', 'aborted':'STOP','preempted':'GOHOME'})  
    
                                  
         smach.StateMachine.add('STOP', Stop(lib), 						  #This state stops the vehicle

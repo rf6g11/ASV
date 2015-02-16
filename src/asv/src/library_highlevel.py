@@ -238,6 +238,16 @@ class library_highlevel:
     def getCompassStatus(self):
         return self.__compass_status
 
+    def getAISStatus(self):
+	return self.__obj_avoid_status
+
+    def getMotorStatus(self):
+	return self.__motor_interface_status
+
+    def getRudderStatus(self):
+	return self.__rudder_interface_status
+
+
 
      # get battery voltage
 
@@ -255,6 +265,9 @@ class library_highlevel:
     def callback_position(self, position):
            self.__position = position   
                    
+    def callback_ais(self, ais):
+	   self.__AIS_message = AIS_message
+
     def callback_back_seat_flag(self, back_seat_flag):
            self.__back_seat_flag = back_seat_flag.data      
     

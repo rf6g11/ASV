@@ -86,19 +86,19 @@ class Initialise(smach.State):
                     return 'aborted'
                 
                 #Check BatteryVoltage
-#                voltage=self.__controller.getBatteryVoltage()
-#                if voltage < 8:
-#                    str="Initial battery voltage, %sV < 8V" %voltage
-#                    rospy.logerr(str)  
-#                    pub.publish(str)       
-#                    str='Initialise State Preempted' 
-#                    pub.publish(str)                             
-#                    return 'preempted'
-#                else:
-#                    str="All critical systems have come online within the timeout (%ss)" %#self.__timeout
-#                    rospy.loginfo(str) 
-#                    str='Initialise State Succeded' 
-#                    pub.publish(str)  
-#                    return 'succeeded'
+                voltage=self.__controller.getBatteryVoltage()
+                if voltage < 8:
+                    str="Initial battery voltage, %sV < 8V" %voltage
+                    rospy.logerr(str)  
+                    pub.publish(str)       
+                    str='Initialise State Preempted' 
+                    pub.publish(str)                             
+                    return 'preempted'
+                else:
+                    str="All critical systems have come online within the timeout (%ss)" %self.__timeout
+                    rospy.loginfo(str) 
+                    str='Initialise State Succeded' 
+                    pub.publish(str)  
+                    return 'succeeded'
                 
                 

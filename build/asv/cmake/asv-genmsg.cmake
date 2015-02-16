@@ -1,6 +1,8 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "asv: 8 messages, 0 services")
+message(FATAL_ERROR "Could not find messages which '/home/ric_94/catkin_ws/src/asv/msg/ais_data.msg' depends on. Did you forget to specify generate_messages(DEPENDENCIES ...)?
+Cannot locate message [dict] in package [asv] with paths [['/home/ric_94/catkin_ws/src/asv/msg']]")
+message(STATUS "asv: 9 messages, 0 services")
 
 set(MSG_I_FLAGS "-Iasv:/home/ric_94/catkin_ws/src/asv/msg;-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg")
 
